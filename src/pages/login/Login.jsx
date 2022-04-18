@@ -7,7 +7,7 @@ import './Login.css'
 
 const Login = () => {
 
-    const { user, isFetching, error, dispatch } = useContext(AuthContext);
+    const { isFetching, dispatch } = useContext(AuthContext);
     const email = useRef();
     const password = useRef();
 

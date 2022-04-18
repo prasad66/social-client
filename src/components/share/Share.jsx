@@ -30,13 +30,13 @@ const Share = () => {
             newPost.img = fileName;
             console.log(newPost);
             try {
-                await axios.post("/upload", data);
+                await axios.post("https://social-mda.herokuapp.com/api/upload", data);
             } catch (err) {
                 console.log(err);
             }
         }
         try {
-            await axios.post("/posts", newPost);
+            await axios.post("https://social-mda.herokuapp.com/api/posts", newPost);
             window.location.reload();
         } catch (err) {
             console.log(err);

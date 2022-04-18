@@ -13,8 +13,8 @@ const Feed = ({ username }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = username
-        ? await axios.get('/posts/profile/' + username)
-        : await axios.get('/posts/timeline/' + user.user._id);
+        ? await axios.get('https://social-mda.herokuapp.com/api/posts/profile/' + username)
+        : await axios.get('https://social-mda.herokuapp.com/api/posts/timeline/' + user.user._id);
       setPosts(response.data.sort((p1, p2) => {
         return new Date(p2.createdAt) - new Date(p1.createdAt);
       }));

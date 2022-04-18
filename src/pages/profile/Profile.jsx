@@ -20,7 +20,7 @@ const Profile = () => {
   useEffect(() => {
 
     const fetchPosts = async () => {
-      const response = await axios.get(`/users/?username=${username}`);
+      const response = await axios.get(`https://social-mda.herokuapp.com/api/users/?username=${username}`);
       setUser(response.data?.user);
     }
 

@@ -18,7 +18,7 @@ const Post = ({ post }) => {
 
     const likeHandler = () => {
         try {
-            const response = axios.put('/posts/like/' + post._id, { userId: currentUser.user._id });
+            const response = axios.put('https://social-mda.herokuapp.com/api/posts/like/' + post._id, { userId: currentUser.user._id });
             console.log(response);
         } catch (err) {
             console.log(err);
@@ -35,7 +35,7 @@ const Post = ({ post }) => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await axios.get(`/users?userId=${post.userId}`);
+            const response = await axios.get(`https://social-mda.herokuapp.com/api/users?userId=${post.userId}`);
             setUser(response.data?.user);
         }
 

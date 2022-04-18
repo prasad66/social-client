@@ -4,12 +4,12 @@ import Profile from './pages/profile/Profile';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { AuthContext, AuthContextProvider } from './context/AuthContext';
+import { AuthContext } from './context/AuthContext';
 import { useContext } from 'react';
 
 function App() {
 
-  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Switch>

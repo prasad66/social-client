@@ -9,6 +9,7 @@ const Topbar = () => {
 
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_URL;
+    console.log(user)
 
     return (
         <div className="topbarContainer">

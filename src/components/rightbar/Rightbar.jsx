@@ -24,7 +24,7 @@ const Rightbar = ({ user }) => {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendsList = user?._id && await axios.get(`/users/friends/${user?._id}`);
+        const friendsList = user?._id && await axios.get(`https://social-mda.herokuapp.com/api/users/friends/${user?._id}`);
         setFriends(friendsList.data);
       } catch (error) {
         console.log(error);
@@ -37,11 +37,11 @@ const Rightbar = ({ user }) => {
     // try {
 
     //   if (followed) {
-    //     await axios.put(`/users/unfollow/${user?._id}`, { userId: currentUser.user._id });
+    //     await axios.put(`https://social-mda.herokuapp.com/api/users/unfollow/${user?._id}`, { userId: currentUser.user._id });
     //     dispatch({ type: 'UNFOLLOW', payload: user?._id });
     //   }
     //   else {
-    //     await axios.put(`/users/follow/${user?._id}`, { userId: currentUser.user._id });
+    //     await axios.put(`https://social-mda.herokuapp.com/api/users/follow/${user?._id}`, { userId: currentUser.user._id });
     //     dispatch({ type: 'FOLLOW', payload: user?._id });
     //   }
     //   setFollowed(!followed);
@@ -51,12 +51,12 @@ const Rightbar = ({ user }) => {
     // }
     try {
       if (followed) {
-        await axios.put(`/users/unfollow/${user._id}`, {
+        await axios.put(`https://social-mda.herokuapp.com/api/users/unfollow/${user._id}`, {
           userId: currentUser.user._id,
         });
         dispatch({ type: "UNFOLLOW", payload: user._id });
       } else {
-        await axios.put(`/users/follow/${user._id}`, {
+        await axios.put(`https://social-mda.herokuapp.com/api/users/follow/${user._id}`, {
           userId: currentUser.user._id,
         });
         dispatch({ type: "FOLLOW", payload: user._id });

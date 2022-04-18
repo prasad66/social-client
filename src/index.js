@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import * as ReactDOM from 'react-dom/client';
 import './index.css';
-import { AuthContext, AuthContextProvider } from './context/AuthContext';
+import { AuthContextProvider } from './context/AuthContext';
 
 import App from './App';
 
